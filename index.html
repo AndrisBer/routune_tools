@@ -1,0 +1,158 @@
+<!--<!DOCTYPE html>-->
+<html>
+<head>
+<title id="tlt">
+	Tools
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="content">
+<div class="controls">
+
+	<select class="option_select" name="options" onchange="ch_visibility_dist(this.value); reset()">
+		<option>Select an option</option>
+		<option value="mkm">Miles to KM convert</option>
+		<option value="ohms">Wire cross-section</option>
+		<option value="volt_dvd">Voltage divider</option>
+		<option value="days_till_date">Days till date</option>
+		<option value="pgen">Password generator</option>
+	</select><br>
+
+	<button id="res" accesskey="r" onclick="reset();"><u>R</u>eset</button><br>
+	<button onclick="close_window();">Close</button>
+</div>
+<!--***********************************************************************************************************************************************************************************************************************-->
+<div class="rest">
+
+	<div class="resultat">
+		<div >
+			<p id="ttt"></p>
+			<p id="outputkm" ></p>
+			<p id="outputms" ></p>
+			<p id="amount" ></p>
+			<p id="variantuskaits" ></p>
+			<p id="selval" ></p>
+			<p id="array" ></p>
+			<p id="somet" ></p>
+			<p id="milestokm" ></p>
+			<p id="ccal" ></p>
+			<p id="bmi" ></p>
+			<p id="calvert" ></p>
+			<p id="calvertvel" ></p>
+			<p id="prodif" ></p>
+			<p id="skersgiezums" ></p>
+		</div>
+		<br>
+	</div>
+
+<div class="distances">
+		<fieldset ><legend>Ātrums Km/stundā:</legend><input type="text" id="km" oninput="calculate()" class="inputt"></fieldset>
+ <br><fieldset ><legend>Ātrums Mēzgli/stundā:</legend><input type="text" id="ms" oninput="calculatem()" class="inputt"></fieldset><br>
+
+<div id="nmnm" >
+	<fieldset ><legend>Convert Miles to km:</legend>
+	<input type="text" id="milekm" oninput="convert()" class="inputt">
+	</fieldset>
+</div>
+</div>
+
+<!--******************************************************************************************************************************************************************************************-->
+<div class="electric">
+	<fieldset ><legend>Vada diametrs mm:</legend>
+	<input type="text" id="skersgr" oninput="skersgriezums()" class="inputt">
+	</fieldset>
+
+	</div>
+<!--*******************************************************************************************************************************************************************************************--->
+<div class="divider">
+    <div class="left_part">
+        <fieldset><legend>Input voltage:</legend>
+            <input type="text" id="inputvoltage1" class="inputt">
+        </fieldset>
+
+        <fieldset><legend>1. resistor:</legend>
+            <input type="text" id="inputres1" class="inputt" oninput="outputvoltage();">
+        </fieldset>
+
+        <fieldset><legend>2. resistor:</legend>
+            <input type="text" id="inputres2" class="inputt" oninput="outputvoltage();">
+        </fieldset>
+
+        <fieldset><legend>Output voltage:</legend>
+            <p id="involtage"></p>
+            <p id="res1"></p>
+            <p id="res2"></p>
+            <p id="outvoltage"></p>
+        </fieldset>
+    </div>
+
+    <div class="right_part">
+        <div id="profdif">
+            <p id="times"></p>
+
+            <fieldset><legend>Input voltage:</legend>
+                <input type="text" id="inputvoltage" class="inputt">
+            </fieldset>
+
+            <fieldset><legend>Output voltage:</legend>
+                <input type="text" id="outputvoltage" class="inputt" oninput="calc_resistance();">
+            </fieldset>
+
+            <fieldset><legend>Resistance:</legend>
+                <p id="input_voltage"></p>
+                <p id="output_voltage"></p>
+                <p id="resistor2"></p>
+                <p id="resistor1"></p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<!--******************************************************************************DIENAS************************************************************************************-->
+<div class="days_till_date">
+
+	<fieldset ><legend >Dienas līdz datumam:</legend>
+	<input type="date" id="skdienas" oninput="skaitit_dienas()">
+	</fieldset><br>
+
+	<fieldset class="dienas"><legend>Dienas:</legend>
+	<p id="dienas_skaits" ></p>
+	</fieldset><br>
+
+</div>
+<!--************************************************************************************************************************************************************************-->
+
+<div >
+	<div class="breakeline">
+		</div>
+</div>
+<br>
+<!--******************************************************************************Bottom************************************************************************************-->
+
+<div class="passwords" >
+	<fieldset ><legend>Paroles ģenerēšana: </legend>
+<div  class="inline-container">
+	<div>
+		<input type="number" class="inputt" id="pass_gar" placeholder="Ievadi šeit paroles garumu">
+		<div id="bulb" class="popup" ><p title="Parolei jābūt vizsmāz 9 simbolu garumā. Paroles garums pēc noklusējumā ir 15 simboli!">&#x1F6C8;
+		</p>
+		</div>
+		</div>
+<div>
+    <input type="text" class="inputt" id="password" readonly placeholder="Saģenerēta parole">
+    <div id="kopet" class="popsup" onclick="KopetParoli()">
+        <p title="Kopēt paroli clipboard'ā">⚡</p>
+    </div>
+</div>
+</div>
+	</fieldset><br>
+	<button class="generatePassword">Ģenerēt</button><br><br>
+</div>
+</div>
+</div>
+<script src="logic.js"></script>
+</body>
+</html>
