@@ -123,6 +123,12 @@ function copyPassword() {
     navigator.clipboard.writeText(passwordField.value);
     passwordField.value = "Nokopēts";
 }
+
+function close_window(){
+	if(confirm("Close?")){close();}else{refresh();}
+
+}
+
 function skaitit_dienas(){
 var ddtt = new Date();
 var dnaa = [1, 21,31,41,51,61,71,81,91,101,121,131,141,151,161,171,181,191,201];
